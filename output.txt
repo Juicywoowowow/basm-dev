@@ -1,0 +1,153 @@
+═══════════════════════════════════════════════════════════════════════
+              BASM POST-MORTEM DEBUG REPORT
+              Generated: 2025-12-25 12:47:47
+═══════════════════════════════════════════════════════════════════════
+
+▌ EXECUTION SUMMARY
+─────────────────────────────────────────────────────────────────────────
+  Total instructions executed: 99
+  Error: .\basm-runtime.lua:477: attempt to index local 'func' (a nil value)
+
+▌ INSTRUCTION FREQUENCY (top 20)
+─────────────────────────────────────────────────────────────────────────
+  mov                        44  (44.4%)
+  st.i64                     38  (38.4%)
+  heap.alloc                  6  (6.1%)
+  console.log.newline         2  (2.0%)
+  console.log.str             2  (2.0%)
+  cmp                         2  (2.0%)
+  data.load                   2  (2.0%)
+  jnz                         1  (1.0%)
+  call                        1  (1.0%)
+  jg                          1  (1.0%)
+
+▌ HOT LABELS (most jumped to)
+─────────────────────────────────────────────────────────────────────────
+  .idx_notzero6                       1 times
+  .endfor3                            1 times
+
+▌ RECENT FUNCTION CALLS
+─────────────────────────────────────────────────────────────────────────
+  #1: unknown → $totalBalance (instr 88 NOT RETURNED)
+
+▌ FINAL REGISTER STATE
+─────────────────────────────────────────────────────────────────────────
+  r10  = 1 (0x1)
+  r11  = 1 (0x1)
+  r12  = 5 (0x5)
+  r13  = 1 (0x1)
+
+▌ LAST 100 INSTRUCTIONS (where it got stuck)
+─────────────────────────────────────────────────────────────────────────
+  [    49] unknown         st.i64 [r9 + 40], r10
+           r0=3 r8=0 r9=0 r10=160 r11=25 r12=0
+  [    50] unknown         mov r0, 48
+           r0=3 r8=0 r9=0 r10=160 r11=25 r12=0
+  [    51] unknown         heap.alloc r10, r0
+           r0=48 r8=0 r9=0 r10=160 r11=25 r12=0
+  [    52] unknown         mov r0, 3
+           r0=48 r8=0 r9=0 r10=208 r11=25 r12=0
+  [    53] unknown         st.i64 [r10 + 0], r0
+           r0=3 r8=0 r9=0 r10=208 r11=25 r12=0
+  [    54] unknown         mov r0, 3
+           r0=3 r8=0 r9=0 r10=208 r11=25 r12=0
+  [    55] unknown         st.i64 [r10 + 8], r0
+           r0=3 r8=0 r9=0 r10=208 r11=25 r12=0
+  [    56] unknown         st.i64 [r10 + 16], 0
+           r0=3 r8=0 r9=0 r10=208 r11=25 r12=0
+  [    57] unknown         mov r11, 1004
+           r0=3 r8=0 r9=0 r10=208 r11=25 r12=0
+  [    58] unknown         st.i64 [r10 + 24], r11
+           r0=3 r8=0 r9=0 r10=208 r11=1004 r12=0
+  [    59] unknown         mov r11, 750
+           r0=3 r8=0 r9=0 r10=208 r11=1004 r12=0
+  [    60] unknown         st.i64 [r10 + 32], r11
+           r0=3 r8=0 r9=0 r10=208 r11=750 r12=0
+  [    61] unknown         mov r11, 3
+           r0=3 r8=0 r9=0 r10=208 r11=750 r12=0
+  [    62] unknown         st.i64 [r10 + 40], r11
+           r0=3 r8=0 r9=0 r10=208 r11=3 r12=0
+  [    63] unknown         st.i64 [r9 + 48], r10
+           r0=3 r8=0 r9=0 r10=208 r11=3 r12=0
+  [    64] unknown         mov r0, 48
+           r0=3 r8=0 r9=0 r10=208 r11=3 r12=0
+  [    65] unknown         heap.alloc r10, r0
+           r0=48 r8=0 r9=0 r10=208 r11=3 r12=0
+  [    66] unknown         mov r0, 3
+           r0=48 r8=0 r9=0 r10=256 r11=3 r12=0
+  [    67] unknown         st.i64 [r10 + 0], r0
+           r0=3 r8=0 r9=0 r10=256 r11=3 r12=0
+  [    68] unknown         mov r0, 3
+           r0=3 r8=0 r9=0 r10=256 r11=3 r12=0
+  [    69] unknown         st.i64 [r10 + 8], r0
+           r0=3 r8=0 r9=0 r10=256 r11=3 r12=0
+  [    70] unknown         st.i64 [r10 + 16], 0
+           r0=3 r8=0 r9=0 r10=256 r11=3 r12=0
+  [    71] unknown         mov r11, 1005
+           r0=3 r8=0 r9=0 r10=256 r11=3 r12=0
+  [    72] unknown         st.i64 [r10 + 24], r11
+           r0=3 r8=0 r9=0 r10=256 r11=1005 r12=0
+  [    73] unknown         mov r11, 8200
+           r0=3 r8=0 r9=0 r10=256 r11=1005 r12=0
+  [    74] unknown         st.i64 [r10 + 32], r11
+           r0=3 r8=0 r9=0 r10=256 r11=8200 r12=0
+  [    75] unknown         mov r11, 17
+           r0=3 r8=0 r9=0 r10=256 r11=8200 r12=0
+  [    76] unknown         st.i64 [r10 + 40], r11
+           r0=3 r8=0 r9=0 r10=256 r11=17 r12=0
+  [    77] unknown         st.i64 [r9 + 56], r10
+           r0=3 r8=0 r9=0 r10=256 r11=17 r12=0
+  [    78] unknown         mov r8, r9
+           r0=3 r8=0 r9=0 r10=256 r11=17 r12=0
+  [    79] unknown         data.load r9, $str_1
+           r0=3 r8=0 r9=0 r10=256 r11=17 r12=0
+  [    80] unknown         console.log.str r9
+           r0=3 r8=0 r9=304 r10=256 r11=17 r12=0
+  [    81] unknown         console.log.newline 
+           r0=3 r8=0 r9=304 r10=256 r11=17 r12=0
+  [    82] unknown         mov r10, 0
+           r0=3 r8=0 r9=304 r10=256 r11=17 r12=0
+  [    83] unknown         data.load r11, $str_2
+           r0=3 r8=0 r9=304 r10=0 r11=17 r12=0
+  [    84] unknown         console.log.str r11
+           r0=3 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    85] unknown         console.log.newline 
+           r0=3 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    86] unknown         mov r12, 0
+           r0=3 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    87] unknown         mov r0, r8
+           r0=3 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    88] unknown         call $totalBalance
+           r0=0 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    89] unknown         mov r8, r0
+           r0=0 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    90] unknown         mov r10, 0
+           r0=0 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    91] unknown         mov r9, r10
+           r0=0 r8=0 r9=304 r10=0 r11=352 r12=0
+  [    92] unknown         mov r11, 1
+           r0=0 r8=0 r9=0 r10=0 r11=352 r12=0
+  [    93] unknown         mov r12, 5
+           r0=0 r8=0 r9=0 r10=0 r11=1 r12=0
+  [    94] unknown         mov r13, 1
+           r0=0 r8=0 r9=0 r10=0 r11=1 r12=5
+  [    95] unknown         mov r10, r11
+           r0=0 r8=0 r9=0 r10=0 r11=1 r12=5
+  [    96] unknown         cmp r10, r12
+           r0=0 r8=0 r9=0 r10=1 r11=1 r12=5
+  [    97] unknown         jg .endfor3
+           r0=0 r8=0 r9=0 r10=1 r11=1 r12=5
+  [    98] unknown         cmp r10, 0
+           r0=0 r8=0 r9=0 r10=1 r11=1 r12=5
+  [    99] unknown         jnz .idx_notzero6
+           r0=0 r8=0 r9=0 r10=1 r11=1 r12=5
+
+▌ LOOP DETECTION
+─────────────────────────────────────────────────────────────────────────
+  Last 10 instructions pattern:
+    mov r10, 0 | mov r9, r10 | mov r11, 1 | mov r12, 5 | mov r13, 1 | mov r10, r11 | cmp r10, r12 | jg .endfor3 | cmp r10, 0 | jnz .idx_notzero6
+  No obvious infinite loop detected in last 10 instructions
+
+═══════════════════════════════════════════════════════════════════════
+                        END OF REPORT
+═══════════════════════════════════════════════════════════════════════
